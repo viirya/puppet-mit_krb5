@@ -31,7 +31,7 @@ class mit_krb5::install($packages = undef, $role = 'client') {
     } elsif $role == 'server' {
       $install = $::osfamily ? {
         'Archlinux' => ['krb5'],
-        'Debian'    => ['krb5-user', 'krb5-kdc'],
+        'Debian'    => ['krb5-user', 'krb5-kdc', 'krb5-admin-server', 'libkrb5-dev'],
         'Gentoo'    => ['mit-krb5'],
         'Mandrake'  => ['krb5-workstation'],
         'RedHat'    => ['krb5-libs', 'krb5-server', 'krb5-workstation'],
